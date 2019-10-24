@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Libraries
     'rest_framework',
+    'django_filters',
     # apps 
     'tasks'
 ]
@@ -73,6 +74,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api.wsgi.application'
 
+
+### DRF Settings ###
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
