@@ -7,6 +7,7 @@ class TaskSerializer(serializers.ModelSerializer):
         model = Task
         fields = ['id', 'description', 'duration', 'recorded_time', 'status']
     
+    # Check instance status
     def validate(self, data):
         if self.instance.status == 1:
             raise ValidationError('task completed')
