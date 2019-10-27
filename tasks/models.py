@@ -11,6 +11,6 @@ TASK_STATUS = (
 
 class Task(models.Model):
     description = models.CharField(max_length=250)
-    duration = models.PositiveSmallIntegerField()
-    recorded_time = models.PositiveSmallIntegerField(null=True, blank=True)
+    estimated_duration = models.PositiveSmallIntegerField()
+    completed_duration = models.DurationField(null=True)
     status = models.PositiveSmallIntegerField(choices=TASK_STATUS, default=0)
